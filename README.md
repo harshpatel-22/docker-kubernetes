@@ -110,33 +110,49 @@ services:
 ```
 
 **Commands**:
-- ```bash
-    docker-compose up 
-  ```
-- ```bash
-    docker-compose down 
-  ```
+   ```bash
+   docker-compose up 
+     ```
+   ```bash
+   docker-compose down 
+   ```
+
+---
 
 ## 3. Advanced Docker Concepts
+
 ### Docker Swarm
 - Docker Swarm is a native clustering and orchestration tool for Docker.
 - It allows you to manage a group of Docker engines as a single, virtual Docker engine.
 - **Commands**:
-    - docker swarm init (initialize a swarm)
-    - docker service create (create a service)
+  ```bash
+  docker swarm init (initialize a swarm)
+  ``` 
+  ```bash
+  docker service create (create a service)
+  ```
 
 ### Docker Security Best Practices
 - Use official images or trusted sources.
 - Limit container privileges.
 - Keep images and containers updated.
 - Use Docker secrets to manage sensitive data.
+
 ### Docker Registry
 - Docker images are stored in registries.
 - You can either use Docker Hub (public) or create your own private registry.
 - Push and pull images using:
-    - docker push <image-name>
-    - docker pull <image-name>
+  ```bash
+  docker push <image-name>
+  ```
+  ```bash
+  docker pull <image-name>
+  ```
+
+  ---
+  
 ## 4. Introduction to Kubernetes
+
 ### What is Kubernetes?
 Kubernetes (K8s) is an open-source system for automating the deployment, scaling, and management of containerized applications.
 
@@ -154,8 +170,10 @@ Kubernetes (K8s) is an open-source system for automating the deployment, scaling
 - **Node**: A physical or virtual machine in the Kubernetes cluster.
 - **Cluster**: A set of nodes that run containerized applications.
 
+---
 
 ## 5. Kubernetes Fundamentals
+
 ### Deploying Applications on Kubernetes
 - Kubernetes uses YAML files to describe application deployments. Example of a deployment YAML:
 
@@ -184,53 +202,71 @@ spec:
     - ClusterIP (default)
     - NodePort
     - LoadBalancer
+ 
 ### ConfigMaps and Secrets
 - **ConfigMap**: Stores non-sensitive configuration data in key-value pairs.
 - **Secret**: Stores sensitive data (e.g., passwords) in Kubernetes.
+
 ### Managing Volumes in Kubernetes
 - Kubernetes supports multiple volume types like persistent volumes (PVs) and persistent volume claims (PVCs).
+
 ### Scaling Applications in Kubernetes
 - Use kubectl scale to scale deployments:
     - kubectl scale deployment myapp --replicas=5
 
+---
 
 ## 6. Advanced Kubernetes Concepts
+
 ### StatefulSets vs. Deployments
 - **StatefulSet**: Used for stateful applications where pods need persistent storage and unique identifiers.
 - **Deployment**: Used for stateless applications.
+
 ### Helm: Kubernetes Package Management
 - Helm is a package manager for Kubernetes, enabling easy management of Kubernetes applications.
 - Helm charts are pre-configured Kubernetes resources packaged together.
+
 ### Auto-scaling in Kubernetes
 - **Horizontal Pod Autoscaler (HPA)**: Automatically adjusts the number of pods based on resource usage.
 - **Vertical Pod Autoscaler (VPA)**: Adjusts CPU and memory resources of containers.
+
 ### Monitoring & Logging
 - Tools like **Prometheus** (for monitoring) and **Fluentd** (for logging) are commonly integrated into Kubernetes clusters for monitoring and log aggregation.
+
 ### Security in Kubernetes
 - Best practices include Role-Based Access Control (RBAC), Network Policies, and using Kubernetes secrets for sensitive data.
 
+---
 
 ## 7. Docker + Kubernetes Integration
+
 ### CI/CD with Docker & Kubernetes
 - **Continuous Integration (CI)**: Automate the process of building and testing Docker images.
 - **Continuous Deployment (CD)**: Automatically deploy Dockerized applications to Kubernetes.
 - Popular tools: Jenkins, GitLab CI, CircleCI.
+
 ### Deploying Dockerized Apps on Kubernetes
 - Build your Docker container, push it to a registry, and create a Kubernetes Deployment to manage the containers.
-### Persistent Storage in Kubernetes
+
+### Persistent Storage in Kubernete
 - Use **Persistent Volumes (PVs)** and **Persistent Volume Claims (PVCs)** to manage data in Kubernetes.
 
+---
 
 ## 8. Troubleshooting & Best Practices
+
 ### Docker Troubleshooting
 - Use docker logs <container-id> to view logs.
 - Check the health of containers with docker inspect <container-id>.
+
 ### Kubernetes Troubleshooting
 - Use kubectl describe pod <pod-name> to get detailed info about a pod.
 - Check logs with kubectl logs <pod-name>.
+
 ### Performance Tuning and Resource Management
 - Set appropriate resource limits (CPU, memory) for containers and pods.
 - Use Kubernetes **Vertical Pod Autoscaler** to adjust resources based on usage.
 
 ## 9. Conclusion
+
 Docker and Kubernetes are powerful tools that, when combined, provide a robust platform for building and running containerized applications. Mastering both can significantly improve your ability to manage scalable and resilient applications in production.
