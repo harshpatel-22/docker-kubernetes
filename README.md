@@ -112,7 +112,8 @@ services:
 **Commands**:
    ```bash
    docker-compose up 
-     ```
+   ```
+
    ```bash
    docker-compose down 
    ```
